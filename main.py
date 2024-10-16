@@ -1,22 +1,11 @@
-import sys
-from PyQt5.QtWidgets import QMainWindow, QApplication
-from PyQt5.QtGui import QIcon
+import tkinter as tk
+from registration import RegistrationForm
 
-class App(QMainWindow):
+def main():
+    root = tk.Tk()
+    app = RegistrationForm(root)
+    root.mainloop()
 
-    def __init__(self):
-        super(). __init__()
-        #window = QMainWindow()
-        self.title= "First OOP GUI"
-        self.initUI()
+if __name__ == "__main__":
+    main()
 
-    def initUI(self):
-        self.setWindowTitle(self.title)
-        self.setGeometry(200,200,300,300)
-        self.setWindowIcon(QIcon('pythonico.ico'))
-        self.show()
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    Main = App()
-    sys.exit(app.exec())
